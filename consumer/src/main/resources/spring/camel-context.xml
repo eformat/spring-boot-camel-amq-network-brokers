@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <camelContext xmlns="http://camel.apache.org/schema/spring">
+        <route id="consumer-route" streamCache="true">
+            <!--from id="route-from-incoming-orders" uri="amq:queue:incomingOrders::Consumer.{{camel.springboot.name}}.incomingOrders"/-->
+            <from id="route-from-incoming-orders" uri="amq:queue:incomingOrders::Consumer.{{camel.springboot.name}}.incomingOrders"/>
+            <log id="route-final-log" message="Done processing ${file:name}"/>
+            <transform>
+                <constant>"Done processing ${file:name}"</constant>
+            </transform> 
+        </route>
+    </camelContext>
+
+</beans>
