@@ -1,7 +1,7 @@
 # AMQ 7 - artemis testing
 
 ```
-oc replace --force  -f \
+oc -n openshift replace --force  -f \
 https://raw.githubusercontent.com/jboss-container-images/jboss-amq-7-broker-openshift-image/73-7.3.0.GA/amq-broker-7-image-streams.yaml
 
 oc -n openshift import-image amq-broker-7/amq-broker-73-openshift --from=registry.redhat.io/amq-broker-7/amq-broker-73-openshift --confirm
