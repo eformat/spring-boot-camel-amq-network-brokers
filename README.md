@@ -20,7 +20,7 @@ https://raw.githubusercontent.com/jboss-container-images/jboss-amq-7-broker-open
 
 oc new-project amq-test
 
-oc new-app amq-broker-73-basic -p AMQ_PASSWORD=password -p AMQ_USER=admin
+oc new-app amq-broker-73-basic -p AMQ_PASSWORD=admin -p AMQ_USER=admin
 
 oc port-forward $(oc get pods -lapplication=broker -o name) 61616
 

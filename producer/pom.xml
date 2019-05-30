@@ -26,7 +26,7 @@
         <fuse.version>7.3.0.fuse-730058-redhat-00001</fuse.version>
         <spring-boot.version>1.5.17.RELEASE</spring-boot.version>
         <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
-        <fabric8.maven.plugin.version>3.5.42</fabric8.maven.plugin.version>
+        <fabric8.maven.plugin.version>4.1.0</fabric8.maven.plugin.version>
         <pooled.jms.version>1.0.4.redhat-00001</pooled.jms.version>
         <openshift.istag>openshift/fuse7-java-openshift:1.2</openshift.istag>
     </properties>
