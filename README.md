@@ -75,3 +75,19 @@ mvn spring-boot:run -DskipTests -Dserver.port=9081 -Dmanagement.port=9082 -Dcame
 
 ```
 
+### Persisted Clustered AMQ Broker
+
+```
+oc new-project amq-test
+oc -n openshift process amq-broker-73-persistence-clustered -p AMQ_USER=admin -p AMQ_PASSWORD=admin -p VOLUME_CAPACITY=1Gi | oc create -f -
+oc scale statefulset broker-amq --replicas=3
+
+-- 
+mvn fabric8:deploy -DskipTests
+```
+
+### Fuse Console
+
+```
+oc new-app fuse72-console
+```
